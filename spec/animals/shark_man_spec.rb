@@ -5,8 +5,9 @@ require 'spec_helper'
 # molly.bite
 # molly.swim
 
+
 describe SharkMan do
-  # let(:subject) { SharkMan.new }
+  let(:subject) { SharkMan.new("Mrs. Sharkie") }
 
   it "can breathe" do
     expect(subject).to respond_to(:breathe)
@@ -25,11 +26,11 @@ describe SharkMan do
   end
 
   it "has a name" do
-    expect(subject.name).to eq "Sharkie"
+    expect(subject.name).to eq "Mrs. Sharkie"
   end
 
   it "has a name through hash notation" do
-    expect(subject["name"]).to eq "Sharkie"
+    expect(subject["name"]).to eq "Mrs. Sharkie"
   end
 
   it "has an fqdn" do
@@ -41,9 +42,10 @@ describe SharkMan do
     # subject.[]("fqdn")
   end
 
-
-
-
+  it "is able to have the fqdn set" do
+    subject.fqdn = "tadpole.local"
+    expect(subject.fqdn).to eq "tadpole.local"
+  end
 
   describe "Class Methods" do
     let(:subject) { described_class }
