@@ -12,6 +12,7 @@ class SharkMan < Humanoid
   #   include Census
   # end
 
+
   def initialize(name)
     @name = name
     @fqdn = "sharkie.local"
@@ -20,6 +21,14 @@ class SharkMan < Humanoid
   def name
     attributes["name"]
   end
+
+  # def formal_name
+  #   name
+  # end
+
+  # alias_method :formal_name, :name
+
+  alias :formal_name :name
 
   def fqdn
     attributes["fqdn"]
@@ -35,6 +44,10 @@ class SharkMan < Humanoid
 
   def attributes
     { "name" => @name, "fqdn" => @fqdn }
+  end
+
+  def method_missing(name,*params,&block)
+    "#{self.class.name} NO #{name.to_s.upcase}!"
   end
 
 end

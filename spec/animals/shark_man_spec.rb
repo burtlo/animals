@@ -25,6 +25,10 @@ describe SharkMan do
     expect(subject).to respond_to(:language)
   end
 
+  it "has a formal name" do
+    expect(subject.formal_name).to eq "Mrs. Sharkie"
+  end
+
   it "has a name" do
     expect(subject.name).to eq "Mrs. Sharkie"
   end
@@ -45,6 +49,14 @@ describe SharkMan do
   it "is able to have the fqdn set" do
     subject.fqdn = "tadpole.local"
     expect(subject.fqdn).to eq "tadpole.local"
+  end
+
+  it "is unable dance and is mad about it" do
+    expect(subject.dance).to eq "SharkMan NO DANCE!"
+  end
+
+  it "is unable hollah and is mad about it" do
+    expect(subject.hollah).to eq "SharkMan NO HOLLAH!"
   end
 
   describe "Class Methods" do
