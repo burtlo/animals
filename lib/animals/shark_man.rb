@@ -13,11 +13,11 @@ class SharkMan < Humanoid
   # end
 
   def name
-    "Sharkie"
+    self["name"]
   end
 
   def fqdn
-    "sharkie.local"
+    self["fqdn"]
   end
 
   def [](value)
