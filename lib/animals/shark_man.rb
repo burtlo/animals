@@ -13,16 +13,19 @@ class SharkMan < Humanoid
   # end
 
   def name
-    self["name"]
+    attributes["name"]
   end
 
   def fqdn
-    self["fqdn"]
+    attributes["fqdn"]
   end
 
   def [](key)
-    attributes = { "name" => "Sharkie", "fqdn" => "sharkie.local" }
     attributes[key]
+  end
+
+  def attributes
+    { "name" => "Sharkie", "fqdn" => "sharkie.local" }
   end
 
 end
