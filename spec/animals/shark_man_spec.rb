@@ -59,6 +59,10 @@ describe SharkMan do
     expect(subject.hollah).to eq "SharkMan NO HOLLAH!"
   end
 
+  it "raises an error when we have incorrectly defined method" do
+    expect { subject.asdfasdfasdfasdf }.to raise_error
+  end
+
   describe "Class Methods" do
     let(:subject) { described_class }
 

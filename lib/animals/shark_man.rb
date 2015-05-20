@@ -47,7 +47,12 @@ class SharkMan < Humanoid
   end
 
   def method_missing(name,*params,&block)
-    "#{self.class.name} NO #{name.to_s.upcase}!"
+    if name == :dance || name == :hollah
+      "#{self.class.name} NO #{name.to_s.upcase}!"
+    else
+      super
+    end
+
   end
 
 end
