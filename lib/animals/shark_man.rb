@@ -20,14 +20,9 @@ class SharkMan < Humanoid
     self["fqdn"]
   end
 
-  def [](value)
-    if value == "name"
-      "Sharkie"
-    elsif value == "fqdn"
-      "sharkie.local"
-    else
-      nil
-    end
+  def [](key)
+    attributes = { "name" => "Sharkie", "fqdn" => "sharkie.local" }
+    attributes[key]
   end
 
 end
