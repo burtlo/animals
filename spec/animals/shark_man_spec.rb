@@ -24,6 +24,26 @@ describe SharkMan do
     expect(subject).to respond_to(:language)
   end
 
+  it "has a name" do
+    expect(subject.name).to eq "Sharkie"
+  end
+
+  it "has a name through hash notation" do
+    expect(subject["name"]).to eq "Sharkie"
+  end
+
+  it "has an fqdn" do
+    expect(subject.fqdn).to eq "sharkie.local"
+  end
+
+  it "has an fqdn through the hash notation" do
+    expect(subject["fqdn"]).to eq "sharkie.local"
+    # subject.[]("fqdn")
+  end
+
+
+
+
 
   describe "Class Methods" do
     let(:subject) { described_class }
